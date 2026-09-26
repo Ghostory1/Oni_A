@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class EntityState
 {
     protected Player player;
+    protected PlayerInputSet input;
     protected StateMachine stateMachine;
     protected string animBoolName;
 
@@ -16,6 +17,7 @@ public abstract class EntityState
 
         anim = player.anim;
         rb = player.rb;
+        input = player.input;
     }
     public virtual void Enter()
     {
@@ -23,7 +25,7 @@ public abstract class EntityState
     }
     public virtual void Update()
     {
-        Debug.Log("I run update of " + animBoolName);
+        anim.SetFloat("yVelocity", rb.linearVelocity.y);
     }
 
     public virtual void Exit()
