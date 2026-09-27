@@ -1,82 +1,56 @@
-# Oni\_A
+# Oni_A
 
-\# Oni\_A
+Unity 기반 2D 액션 게임 프로젝트
 
+## Development Progress
 
+### Step 1 - State Machine & Player 기본 구조
 
-Unity 기반 게임 프로젝트
+- EntityState 기반 상태 시스템 구현
+- StateMachine을 통한 상태 전환 구조 구현
+- Player 기본 이동 및 입력 시스템 구현
+- Idle / Move 상태 구현
 
+### Step 2 - Jump & Airborne System
 
+- Jump / Fall 상태 구현
+- 공중 이동 및 점프 물리 구현
+- Rigidbody2D 기반 속도 제어
+- Ground Detection 구현
 
-\## Development Progress
+### Step 3 - Wall Slide
 
+- Raycast 기반 Wall Detection 구현
+- Wall Slide 상태 구현
+- 벽에 붙은 상태에서 낙하 속도 조절
+- 아래 입력을 통한 빠른 Wall Slide 구현
+- Wall Slide 애니메이션 상태 연결
 
-
-\### Step 1 - State Machine \& Player 기본 구조
-
-
-
-\#### 구현 내용
-
-
-
-\- `EntityState`
-
-&#x20; - Entity의 상태를 정의하기 위한 기본 State 클래스
-
-&#x20; - 상태의 공통적인 동작 구조 정의
-
-
-
-\- `StateMachine`
-
-&#x20; - 현재 State를 관리
-
-&#x20; - State 전환 처리
-
-
-
-\- `Player`
-
-&#x20; - Player의 기본 구조 생성
-
-&#x20; - StateMachine을 이용한 상태 관리 기반 마련
-
-
-
-\- `Player\_IdleState`
-
-&#x20; - Player의 대기 상태 구현
-
-
-
-\- `Player\_MoveState`
-
-&#x20; - Player의 이동 상태 구현
-
-
-
-\- `PlayerInputSystemSet`
-
-&#x20; - Player Input System 구성
-
-&#x20; - Player의 입력을 상태와 연결하기 위한 기반 구현
-
-&#x20; -   Vector2 - Movement - WASD
-
-
-
-\#### 현재 State 구조
-
-
+## Current State Structure
 
 ```text
-
 Player
+└─ StateMachine
+   ├─ GroundedState
+   │  ├─ IdleState
+   │  └─ MoveState
+   │
+   ├─ JumpState
+   ├─ FallState
+   └─ WallSlideState
+Input
+Input	Action
+WASD	Movement
+Space	Jump
+S	Fast Wall Slide
+Tech Stack
+Unity
+C#
+Unity Input System
+Rigidbody2D
+Animator
+State Machine Pattern
+Raycast
 
-&#x20;└─ StateMachine
 
-&#x20;    ├─ Player\_IdleState
-
-&#x20;    └─ Player\_MoveState
 

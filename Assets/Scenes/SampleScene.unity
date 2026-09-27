@@ -566,11 +566,14 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 12
   inAirMoveMultiplier: 0.7
+  wallSlideMultiplier: 0.809
   groundCheckDistance: 0.05
+  wallCheckDistance: 0.55
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   groundDetected: 0
+  wallDetected: 0
 --- !u!4 &522212391
 Transform:
   m_ObjectHideFlags: 0
@@ -639,8 +642,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0.1
   m_AngularDamping: 0.05
-  m_GravityScale: 2.5
-  m_Material: {fileID: 0}
+  m_GravityScale: 3.5
+  m_Material: {fileID: 6200000, guid: 6fdf3fd23b5c104478e5e596ce192eee, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
