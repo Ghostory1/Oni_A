@@ -563,6 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9afbe32d7d0924fb358090194aa9bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  wallJumpForce: {x: 6, y: 12}
   moveSpeed: 5
   jumpForce: 12
   inAirMoveMultiplier: 0.7
