@@ -26,6 +26,21 @@ Unity 기반 2D 액션 게임 프로젝트
 - 아래 입력을 통한 빠른 Wall Slide 구현
 - Wall Slide 애니메이션 상태 연결
 
+### Step 4 - Wall Slide Jump
+
+- Wall Slide 상태에서 점프 기능 구현
+- 벽의 반대 방향으로 점프하는 Wall Jump 구현
+- Wall Jump 시 수평 / 수직 속도 제어
+- Wall Jump 이후 공중 상태 전환 구현
+- 벽 방향에 따른 점프 방향 처리
+
+### Step 5 - Basic Attack
+
+- Grounded 상태에서 기본 공격 기능 구현
+- 공격 입력을 통한 Basic Attack 상태 전환
+- Basic Attack 애니메이션 연결
+- 공격 중 상태 전환 및 제어 구현
+
 ## Current State Structure
 
 ```text
@@ -33,24 +48,12 @@ Player
 └─ StateMachine
    ├─ GroundedState
    │  ├─ IdleState
-   │  └─ MoveState
+   │  ├─ MoveState
+   │  └─ BasicAttackState
    │
    ├─ JumpState
    ├─ FallState
    └─ WallSlideState
-Input
-Input	Action
-WASD	Movement
-Space	Jump
-S	Fast Wall Slide
-Tech Stack
-Unity
-C#
-Unity Input System
-Rigidbody2D
-Animator
-State Machine Pattern
-Raycast
 
 
 
