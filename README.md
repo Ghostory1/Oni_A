@@ -40,6 +40,9 @@ Unity 기반 2D 액션 게임 프로젝트
 - 공격 입력을 통한 Basic Attack 상태 전환
 - Basic Attack 애니메이션 연결
 - 공격 중 상태 전환 및 제어 구현
+- 4콤보 어택 구현
+- 각 콤보마다 앞으로 치고 나가는 AttackVelocity 배열로 변경
+- lastTimeAttacked 타이머를 이용하여 콤보 초기화 진행
 
 ## Current State Structure
 
