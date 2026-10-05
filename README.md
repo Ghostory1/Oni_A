@@ -2,6 +2,8 @@
 
 Unity 기반 2D 액션 게임 프로젝트
 
+## 유니티 버전 : Unity 6.3 LTS (6000.3.25f1)
+
 ## Development Progress
 
 ### Step 1 - State Machine & Player 기본 구조
