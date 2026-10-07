@@ -13,7 +13,7 @@ public class Player_DashState : EntityState
         stateTimer = player.dashDuration;
         originalGravityScale = rb.gravityScale;
         rb.gravityScale = 0;
-        dashDir = player.facingDir;
+        dashDir = (int)(player.moveInput.x != 0 ? player.moveInput.x : player.facingDir);
     }
     public override void Update()
     {

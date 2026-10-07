@@ -1,5 +1,6 @@
 using NUnit.Framework.Constraints;
 using System;
+using System.Collections;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour
 
     public PlayerInputSet input { get; private set; }
     private StateMachine stateMachine;
-
+    private Coroutine attackQueueCo;
     public  Player_IdleState idleState { get; private set;  }
     public  Player_MoveState moveState { get; private set; }
     public  Player_JumpState jumpState { get; private set; }
@@ -88,6 +89,17 @@ public class Player : MonoBehaviour
     {
         HandleCollisionDetection();
         stateMachine.UpdateActiveState();
+    }
+    public void EnterAttackStateWithDelay()
+    {
+        if (attackQueueCo != null)
+            StopCoroutine(attackQueueCo);
+        attackQueueCo = StartCoroutine(EnterAttackStateWithDelayCo());
+    }
+    private IEnumerator EnterAttackStateWithDelayCo()
+    {
+        yield  return new WaitForEndOfFrame();
+        stateMachine.ChangeState(basicAttackState);
     }
     public void CallAnimationTrigger()
     {
