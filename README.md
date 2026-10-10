@@ -53,6 +53,9 @@ Unity 기반 2D 액션 게임 프로젝트
 - 콤보 어택 사이사이 idleState로 넘어가는걸 Player에서 코루틴을 생성해서 조작감 상승
 - 어택 중간중간 공격방향 변경 가능
 
+### Step 7 - Jump Attack
+- Aired 상태에서 점프 어택 구현
+- 점프공격 시 따로 Player.jumpAttackVelocity 로 힘 추가 가능
 ## Current State Structure
 
 ```text
@@ -62,10 +65,12 @@ Player
    │  ├─ IdleState
    │  ├─ MoveState
    │  └─ BasicAttackState
-   │
-   ├─ JumpState
-   ├─ FallState
+   ├─AiredState
+   │  ├─ JumpState
+   │  ├─FallState
+   │  ├─ JumAttackState
    └─ WallSlideState
-
+   └─ WallSlideJumpState
+	
 
 
