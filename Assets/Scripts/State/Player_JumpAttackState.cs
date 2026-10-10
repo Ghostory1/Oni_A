@@ -24,9 +24,12 @@ public class Player_JumpAttackState : EntityState
             player.SetVelocity(rb.linearVelocity.x, rb.linearVelocity.y);
         }
 
-        if (triggerCalled && player.groundDetected)
+        if (triggerCalled)
         {
-            stateMachine.ChangeState(player.idleState);
+            if (player.groundDetected)
+                stateMachine.ChangeState(player.idleState);
+            if (rb.linearVelocity.y < 0)
+                stateMachine.ChangeState(player.fallState);
         }
 
     }
