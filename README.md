@@ -4,6 +4,8 @@ Unity 기반 2D 액션 게임 프로젝트
 
 ## 유니티 버전 : Unity 6.3 LTS (6000.3.25f1)
 
+## Assets - Assets 폴더에 에셋 필요 
+
 ## Development Progress
 
 ### Step 1 - State Machine & Player 기본 구조
@@ -71,6 +73,7 @@ Player
    │  ├─ JumAttackState
    └─ WallSlideState
    └─ WallSlideJumpState
-	
 
+## TileMap - 디버그용 타일맵 제작
+ - 무한맵 로직 작성
 
